@@ -42,8 +42,8 @@ _Demontration_
 - Create an instance of a class, then add a new class field and reload, compare previous vs new instances!
 
 ### Misconceptions
-- Just uses instrumentation (API)[./instrumentation-api.README]
-Instrumentation is limited to only changing method bodies (as is (HotSwap)[./hot-swap]). jRebel agent uses it to instrument classloader and basic classes but not actually for the reloading process.
+- Just uses [instrumentation API](./instrumentation-api.README)
+Instrumentation is limited to only changing method bodies (as is [Hot-Swap](./HOTSWAP.md)). jRebel agent uses it to instrument classloader and basic classes but not actually for the reloading process.
 
 ### How to's
 - How to reload a class
@@ -67,6 +67,9 @@ What's new for version 2019.2.0
 Additional support for:
 - Tomcat, WebSphere Liberty, Jetty, Payara, tc Server, Hybris, KumuluzEE, RestEasy, DeltaSpike, and MyBatis-Spring.
 
-More on support here: https://jrebel.com/software/jrebel/download/changelog/2019-x/
+### References:
+- [Docs](https://www.jrebel.com/products/jrebel/learn)
+- [FAQ](https://www.jrebel.com/jrebel/learn/faq)
+- [IntelliJ setup](https://www.jrebel.com/products/jrebel/quickstart/intellij)
 - Missing read on instrumentation API
 - Missing read on HotSwap
