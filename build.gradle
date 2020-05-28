@@ -1,8 +1,10 @@
+import java.lang.reflect.Type
+
 plugins {
-	id 'org.springframework.boot' version '2.2.4.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
-	id "org.zeroturnaround.gradle.jrebel" version "1.1.9"
-	id 'java'
+    id 'org.springframework.boot' version '2.2.4.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id "org.zeroturnaround.gradle.jrebel" version "1.1.9"
+    id 'java'
 }
 
 group = 'com.miztli'
@@ -10,16 +12,34 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
 }
 
 test {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
+
+task showSystemProperties() {
+    group = 'Help'
+    description = 'Print agent path'
+
+	println 'agentpath=' + System.properties['agentpath']
+}
+
+// For springboot:bootRun task
+// Add agentpath to jvm arguments
+task bootRunWithJRebel() {
+    if (System.properties['agentpath']) {
+        def rebelAgent="-agentpath:${System.properties['agentpath']}"
+        println 'Adding JRebel Agent to jvmArgs: ' + rebelAgent
+        bootRun.jvmArgs += rebelAgent
+    }
+}
+bootRunWithJRebel.finalizedBy(bootRun)

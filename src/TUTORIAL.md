@@ -9,8 +9,16 @@
 ./gradlew generateRebel
 ```
 - Show generated file:  `build/jrebel/rebel.xml`
+- Start continuous build: `./gradlew -t bootRun`
+
+(from docs: Enables continuous build. Gradle does not exit and will re-execute tasks when task file inputs change.)
+
+### Using fat jar
 - Build project `./gradlew build`
-- Run app `java -agentpath:/Users/miztlimelgoza/Documents/jrebel/jrebel-2020.2.2/lib/libjrebel64.dylib -jar build/libs/jrebel_tutorial-0.0.1-SNAPSHOT.jar`
+- Run app: `java -agentpath:/Users/miztlimelgoza/Documents/jrebel/jrebel-2020.2.2/lib/libjrebel64.dylib -jar build/libs/jrebel_tutorial-0.0.1-SNAPSHOT.jar`
+
+### Using bootRun
+- Run app: `./gradlew bootRunWithJRebel`
 
 Missing:
 how to recompile class automatically
