@@ -27,19 +27,23 @@ test {
 }
 
 task showSystemProperties() {
-    group = 'Help'
-    description = 'Print agent path'
+    doFirst {
+        group = 'Help'
+        description = 'Print agent path'
 
-	println 'agentpath=' + System.properties['agentpath']
+        println 'agentpath=' + System.properties['agentpath']
+    }
 }
 
 // For springboot:bootRun task
 // Add agentpath to jvm arguments
 task bootRunWithJRebel() {
-    if (System.properties['agentpath']) {
-        def rebelAgent="-agentpath:${System.properties['agentpath']}"
-        println 'Adding JRebel Agent to jvmArgs: ' + rebelAgent
-        bootRun.jvmArgs += rebelAgent
+    doFirst {
+        if (System.properties['agentpath']) {
+            def rebelAgent = "-agentpath:${System.properties['agentpath']}"
+            println 'Adding JRebel Agent to jvmArgs: ' + rebelAgent
+            bootRun.jvmArgs += rebelAgent
+        }
     }
 }
 bootRunWithJRebel.finalizedBy(bootRun)
