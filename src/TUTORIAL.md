@@ -17,6 +17,8 @@
 
 - (other terminal tab) Run app: `java -agentpath:/Users/miztlimelgoza/Documents/jrebel/jrebel-2020.2.2/lib/libjrebel64.dylib -jar build/libs/jrebel_tutorial-0.0.1-SNAPSHOT.jar`
 
+- [JAR configuration docs](https://manuals.jrebel.com/jrebel/standalone/config.html#jar-configuration)
+
 ### Using bootRun
 - Run app: `./gradlew bootRunWithJRebel`
 
