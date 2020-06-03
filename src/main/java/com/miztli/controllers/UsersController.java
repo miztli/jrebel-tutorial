@@ -21,6 +21,12 @@ public class UsersController
         return iUserService.getUsers();
     }
 
+    @DeleteMapping
+    public void clearUsers()
+    {
+        iUserService.clearUsers();
+    }
+
     @PostMapping
     public void addUser(@RequestBody final UserEntity userEntity)
     {

@@ -12,14 +12,22 @@ public class UserService implements IUserService
 
     private final List<UserEntity> users = new ArrayList<>();
 
+    private int userId = 1;
+
     @Override
     public void createDummyUsers()
     {
-        users.clear();
-        for (int i = 1; i <= 10; i++)
+        for (int i = 1; i <= 3; i++)
         {
-            users.add(new UserEntity(i, "user " + i, i + 20, true));
+            users.add(new UserEntity(userId, "user " + userId, userId + 20, true, "Some address for " + userId));
+            userId++;
         }
+    }
+
+    @Override
+    public void clearUsers()
+    {
+        users.clear();
     }
 
     @Override
@@ -41,7 +49,6 @@ public class UserService implements IUserService
     @Override
     public void add(UserEntity user)
     {
-
         users.add(user);
     }
 }

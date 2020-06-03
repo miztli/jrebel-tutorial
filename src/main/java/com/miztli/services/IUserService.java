@@ -8,6 +8,8 @@ public interface IUserService
 {
     void createDummyUsers();
 
+    void clearUsers();
+
     List<UserEntity> getUsers();
 
     UserEntity getById(long id);

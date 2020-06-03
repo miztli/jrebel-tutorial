@@ -14,6 +14,6 @@ public class GreetingsController
     @GetMapping
     public Map<String, String> greetings(@RequestParam(name = "name", defaultValue = "unknown") final String name)
     {
-        return Map.of("greetings changed", name);
+        return Map.of("greetings", name);
     }
 }

@@ -2,12 +2,13 @@ package com.miztli.entities;
 
 public class UserEntity
 {
-    public UserEntity(int id, String name, int age, boolean active)
+    public UserEntity(int id, String name, int age, boolean active, String address)
     {
         this.id = id;
         this.name = name;
         this.age = age;
         this.active = active;
+        this.address = address;
     }
 
     private int id;
@@ -17,6 +18,8 @@ public class UserEntity
     private int age;
 
     private boolean active;
+
+    private String address;
 
     public int getId()
     {
@@ -56,5 +59,15 @@ public class UserEntity
     public void setActive(final boolean active)
     {
         this.active = active;
+    }
+
+    public void setAddress(String address)
+    {
+        this.address = address;
+    }
+
+    public String getAddress()
+    {
+        return address;
     }
 }
