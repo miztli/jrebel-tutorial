@@ -7,3 +7,6 @@ build/
 
 # mac OS
 .DS_Store
+
+# compiled sources
+out/
