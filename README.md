@@ -39,7 +39,7 @@ IMPORTANT: when updating a class, already existing instances of classes will be 
     - Using the [intellij-plugin](docs/intellij-plugin.md)
     
         *NOTES on `jrebel.xml` file:* 
-        - In case of _JAR files_: `rebel.xml` should be included in the root folder.
+        - In case of _JAR files_: `rebel.xml` could be included in the root folder or in the `main/resources` directory.
         - When working with _WAR files_: the `rebel.xml` should be located within the WEB-INF/classes folder.
         - _EAR files_: require a `rebel.xml` for each internal EAR module (that means JARs and WARs).
 
