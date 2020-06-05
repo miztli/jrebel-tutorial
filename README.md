@@ -4,7 +4,7 @@
 ### What JRebel is!
 
 - JRebel is a tool designed for Java, monitors and reloads changes to your code without the need to:
-    - Re-build
+    - Rebuild
     - Redeploy
 
 - A plugin for the JVM. JRebel uses `-agentpath` command line option to allow custom instrumentation plugins to be registered.
