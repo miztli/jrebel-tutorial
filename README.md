@@ -54,7 +54,7 @@ IMPORTANT: when updating a class, already existing instances of classes will be 
 ## Doubts 
 
 - Does it really only work with Java? 
-    - Since it works with compiled classes (.class), then it can work for any language around the JVM (fe: groovy).
+    - Since it works with compiled classes (.class), then it can work for any language around the JVM (fe: groovy). Refer to [integrations](https://manuals.jrebel.com/jrebel/misc/integrations.html) for more information.
 
 ### References:
 - [Docs](https://www.jrebel.com/products/jrebel/learn)
